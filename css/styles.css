@@ -1,0 +1,43 @@
+:root {
+  --clr-primary-blue: hsl(246, 80%, 60%);
+  --clr-work: hsl(15, 100%, 70%);
+  --clr-play: hsl(195, 74%, 62%);
+  --clr-study: hsl(348, 100%, 68%);
+  --clr-exercise: hsl(145, 58%, 55%);
+  --clr-social: hsl(264, 64%, 52%);
+  --clr-selfcare: hsl(43, 84%, 65%);
+
+  --clr-neutral-darkerblue: hsl(226, 43%, 10%);
+  --clr-neutral-darkblue: hsl(235, 46%, 20%);
+  --clr-neutral-desblue: hsl(235, 45%, 61%);
+  --clr-neutral-paleblue: hsl(236, 100%, 87%);
+
+  --fw-300: 300;
+  --fw-400: 400;
+  --fw-500: 500;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  font-size: 18px;
+  justify-content: center;
+  height: 100vh;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
