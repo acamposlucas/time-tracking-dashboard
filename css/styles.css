@@ -26,18 +26,245 @@
   font-family: "Rubik", sans-serif;
 }
 
+html {
+  font-size: 62.5%;
+}
+
 body {
   align-items: center;
+  background-color: var(--clr-neutral-darkerblue);
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100vh;
+  padding: 8rem 2rem;
+}
+
+.tracker-cards {
+  display: grid;
+  gap: 2rem;
+  grid-auto-rows: max-content;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  height: auto;
+  width: 100%;
+}
+
+@media screen and (min-width: 500px) {
+  .tracker-cards {
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    min-height: 51.8rem;
+    gap: 3rem;
+  }
+}
+
+@media screen and (min-width: 1110px) {
+  .tracker-cards {
+    max-width: 111rem;
+  }
+}
+
+.tracker {
+  background-color: var(--clr-neutral-darkblue);
+  width: 100%;
+  border-radius: 16px;
+}
+
+@media screen and (min-width: 1110px) {
+  .tracker {
+    grid-column: 1;
+    grid-row: span 2;
+  }
+}
+
+.card__menu {
+  align-items: center;
+  background-color: var(--clr-primary-blue);
+  border-radius: 16px;
   display: flex;
-  font-size: 18px;
-  justify-content: center;
-  height: 100vh;
+  gap: 1.5rem;
+  padding: 2.5rem;
+}
+
+@media screen and (min-width: 1110px) {
+  .card__menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4rem;
+    padding: 3rem 2.5rem 8rem 2.5rem;
+  }
+}
+
+.card__image {
+  height: 80px;
+  border: 3px solid #fff;
+  border-radius: 100%;
+}
+
+.card__report__content p {
+  color: var(--clr-neutral-paleblue);
+  font-weight: var(--fw-500);
+  font-size: 14px;
+  opacity: 0.7;
+}
+
+.card__report__content h1 {
+  color: var(--clr-neutral-paleblue);
+  font-weight: var(--fw-400);
+  font-size: 2.2rem;
+  line-height: 1.4;
+}
+
+@media screen and (min-width: 1110px) {
+  .card__report__content h1 {
+    margin-top: 2rem;
+    font-size: 4.2rem;
+  }
+}
+
+.card__options {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 2.5rem;
+}
+
+@media screen and (min-width: 1110px) {
+  .card__options {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+}
+
+.card__option {
+  border: none;
+  background-color: transparent;
+  color: var(--clr-neutral-desblue);
+  cursor: pointer;
+  font-weight: var(--fw-400);
+  font-size: 1.8rem;
+}
+
+.active {
+  color: #fff;
+  transition: ease-in-out 500ms;
+}
+
+/* .card__option:active,
+.card__option:focus,
+.card__option:hover {
+  color: #fff;
+} */
+
+.tag__tracker {
+  border-radius: 16px;
+  background-repeat: no-repeat;
+  background-position: top right 3rem;
+
+  padding-top: 5rem;
+  width: 100%;
+}
+
+.tag__tracker.work {
+  background-color: var(--clr-work);
+  background-image: url(../images/icon-work.svg);
+}
+
+.tag__tracker.play {
+  background-color: var(--clr-play);
+  background-image: url(../images/icon-play.svg);
+}
+
+.tag__tracker.study {
+  background-color: var(--clr-study);
+  background-image: url(../images/icon-study.svg);
+}
+
+.tag__tracker.exercise {
+  background-color: var(--clr-exercise);
+  background-image: url(../images/icon-exercise.svg);
+}
+
+.tag__tracker.social {
+  background-color: var(--clr-social);
+  background-image: url(../images/icon-social.svg);
+}
+.tag__tracker.self-care {
+  background-color: var(--clr-selfcare);
+  background-image: url(../images/icon-self-care.svg);
+}
+
+.tag__tracker__info {
+  background-color: var(--clr-neutral-darkblue);
+  border-radius: 16px;
+  cursor: pointer;
+  display: grid;
+  gap: 1rem;
+  height: 100%;
+  padding: 2rem;
+}
+
+.tag__tracker__info:hover {
+  background-color: var(--clr-neutral-desblue);
+}
+
+.tag__tracker__header,
+.tag__tracker__times {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1110px) {
+  .tag__tracker__times {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+.tag__tracker__header h2 {
+  color: #fff;
+  font-size: 2rem;
+}
+
+.tag__tracker__header button {
+  background-image: url(../images/icon-ellipsis.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  width: 24px;
+  height: 10px;
+}
+
+.tag__tracker__times h3 {
+  color: #fff;
+  font-weight: var(--fw-300);
+  font-size: 2.8rem;
+}
+
+@media screen and (min-width: 1110px) {
+  .tag__tracker__times h3 {
+    font-size: 5.2rem;
+  }
+}
+
+.tag__tracker__times p {
+  color: var(--clr-neutral-paleblue);
+  font-size: 1.4rem;
 }
 
 .attribution {
   font-size: 11px;
   text-align: center;
+  color: #fff;
 }
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: var(--clr-neutral-paleblue);
 }
