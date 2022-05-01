@@ -191,6 +191,7 @@ body {
   background-color: var(--clr-social);
   background-image: url(../images/icon-social.svg);
 }
+
 .tag__tracker.self-care {
   background-color: var(--clr-selfcare);
   background-image: url(../images/icon-self-care.svg);
@@ -204,6 +205,8 @@ body {
   gap: 1rem;
   height: 100%;
   padding: 2rem;
+  position: relative;
+  top: 3px;
 }
 
 .tag__tracker__info:hover {
@@ -265,6 +268,7 @@ body {
   text-align: center;
   color: #fff;
 }
+
 .attribution a {
   color: var(--clr-neutral-paleblue);
 }
